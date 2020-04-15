@@ -21,7 +21,7 @@ const injectContext = PassedComponent => {
 			})
 		);
 
-		useEffect(() => { 
+		useEffect(() => {
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only run once on the entire application lifetime
@@ -30,6 +30,9 @@ const injectContext = PassedComponent => {
 			 * state.loadSomeData(); <---- calling this function from the flux.js actions
 			 *
 			 **/
+			state.actions.setAllContacts();
+			state.actions.updateContact();
+			state.actions.deleteContact();
 		}, []);
 
 		// the initial value for the context its not null anymore, but the current state of this component,
@@ -45,4 +48,3 @@ const injectContext = PassedComponent => {
 };
 
 export default injectContext;
-
